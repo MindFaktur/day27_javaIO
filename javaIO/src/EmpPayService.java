@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,10 +16,16 @@ public class EmpPayService
 
     public static void main(String[] args)
     {
-        fileOperations();
+        empOperations();
+        FileOperations.fileChecker("javaIO/src/empDetails.txt");
+        FileOperations.fileDeleter("javaIO/src/empDetails.txt");
+        FileOperations.createDirectory(Paths.get("javaIO/src/new"));
+        FileOperations.createEmptyFile("javaIO/src/new/new.txt");
+        FileOperations.listEverythingInGivenDirectory(Paths.get("javaIO/src"));
+
     }
 
-    public static void fileOperations()
+    public static void empOperations()
     {
         EmpValues EV = new EmpValues();
         System.out.println("Please enter employee id");
